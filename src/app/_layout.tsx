@@ -3,6 +3,7 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
+import 'expo-dev-client';
 
 import '@/assets/styles/global.css';
 
