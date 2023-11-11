@@ -1,0 +1,36 @@
+import { ExpoConfig, ConfigContext } from 'expo/config';
+
+export default ({ config }: ConfigContext): ExpoConfig => ({
+  ...config,
+  name: 'ReactApp',
+  slug: 'reactapp',
+  owner: 'slvstr',
+  version: '1.0.0',
+  orientation: 'portrait',
+  icon: './src/assets/images/icon.png',
+  scheme: 'reactapp',
+  userInterfaceStyle: 'automatic',
+  splash: {
+    image: './src/assets/images/splash.png',
+    resizeMode: 'contain',
+    backgroundColor: '#ffffff',
+  },
+  jsEngine: 'hermes',
+  assetBundlePatterns: ['**/*'],
+  ios: {
+    supportsTablet: true,
+    bundleIdentifier: 'com.slvstrdev.reactapp',
+    userInterfaceStyle: 'automatic',
+    requireFullScreen: true,
+  },
+  plugins: ['expo-router'],
+  experiments: {
+    tsconfigPaths: true,
+    typedRoutes: true,
+  },
+  extra: {
+    eas: {
+      projectId: 'c52b4a5b-ff9c-4178-ada6-c852f87a1fd6',
+    },
+  },
+});
