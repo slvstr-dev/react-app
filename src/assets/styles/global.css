@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --accent-dark: 32 44 52;
+    --accent-light: 241 242 245;
+
+    --background-dark: 12 19 23;
+    --background-light: 252 245 235;
+
+    --brand-primary: 39 211 102;
+    --brand-secondary: 230 255 219;
+    --brand-tertiary: 17 27 33;
+    --brand-quaternary: 252 245 235;
+
+    --color-dark: 27 30 33;
+    --color-light: 255 255 255;
+    --color-black: 0 0 0;
+    --color-white: 255 255 255;
+    --color-notify: 84 189 236;
+    --color-muted: 99 122 133;
+
+    --receiver-dark: 32 44 52;
+    --receiver-light: 255 255 255;
+
+    --sender-dark: 0 93 76;
+    --sender-light: 231 255 220;
+  }
+}
