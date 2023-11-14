@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <View className="h-full bg-background-light dark:bg-background-dark">
       <SafeAreaView>
-        <Text className="text-dark dark:text-white">Calls</Text>
+        <Text className="text-dark dark:text-light">Calls</Text>
       </SafeAreaView>
     </View>
   );
