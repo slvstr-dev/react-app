@@ -1,3 +1,5 @@
+import { colors } from './src/constants/colors';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -7,33 +9,53 @@ module.exports = {
     colors: {
       dark: 'rgb(var(--color-dark) / <alpha-value>)',
       light: 'rgb(var(--color-light) / <alpha-value>)',
-      black: 'rgb(var(--color-black) / <alpha-value>)',
-      white: 'rgb(var(--color-white) / <alpha-value>)',
-      notify: 'rgb(var(--color-notify) / <alpha-value>)',
       muted: 'rgb(var(--color-muted) / <alpha-value>)',
+      info: 'rgb(var(--color-info) / <alpha-value>)',
 
-      accent: {
-        dark: 'rgb(var(--accent-dark) / <alpha-value>)',
-        light: 'rgb(var(--accent-light) / <alpha-value>)',
-      },
       background: {
-        dark: 'rgb(var(--background-dark) / <alpha-value>)',
-        light: 'rgb(var(--background-light) / <alpha-value>)',
+        dark: 'rgb(var(--color-background-dark) / <alpha-value>)',
+        light: 'rgb(var(--color-background-light) / <alpha-value>)',
       },
+
       brand: {
-        primary: 'rgb(var(--brand-primary) / <alpha-value>)',
-        secondary: 'rgb(var(--brand-secondary) / <alpha-value>)',
-        tertiary: 'rgb(var(--brand-tertiary) / <alpha-value>)',
-        quaternary: 'rgb(var(--brand-quaternary) / <alpha-value>)',
+        0: 'rgb(var(--color-brand-0) / <alpha-value>)',
+        1: 'rgb(var(--color-brand-1) / <alpha-value>)',
+        2: 'rgb(var(--color-brand-2) / <alpha-value>)',
+        3: 'rgb(var(--color-brand-3) / <alpha-value>)',
+        4: 'rgb(var(--color-brand-4) / <alpha-value>)',
+        5: 'rgb(var(--color-brand-5) / <alpha-value>)',
+        6: 'rgb(var(--color-brand-6) / <alpha-value>)',
       },
-      receiver: {
-        dark: 'rgb(var(--receiver-dark) / <alpha-value>)',
-        light: 'rgb(var(--receiver-light) / <alpha-value>)',
-      },
-      sender: {
-        dark: 'rgb(var(--sender-dark) / <alpha-value>)',
-        light: 'rgb(var(--sender-light) / <alpha-value>)',
+
+      body: {
+        dark: 'rgb(var(--body-dark) / <alpha-value>)',
+        light: 'rgb(var(--body-light) / <alpha-value>)',
       },
     },
   },
+  plugins: [
+    ({ addBase }) =>
+      addBase({
+        ':root': {
+          '--color-dark': colors.dark,
+          '--color-light': colors.light,
+          '--color-muted': colors.muted,
+          '--color-info': colors.info,
+
+          '--color-background-dark': colors.background.dark,
+          '--color-background-light': colors.background.light,
+
+          '--color-brand-0': colors.brand[0],
+          '--color-brand-1': colors.brand[1],
+          '--color-brand-2': colors.brand[2],
+          '--color-brand-3': colors.brand[3],
+          '--color-brand-4': colors.brand[4],
+          '--color-brand-5': colors.brand[5],
+          '--color-brand-6': colors.brand[6],
+
+          '--color-body-dark': colors.body.dark,
+          '--color-body-light': colors.body.light,
+        },
+      }),
+  ],
 };

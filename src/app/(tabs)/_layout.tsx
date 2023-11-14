@@ -1,7 +1,9 @@
 import { Ionicons } from '@expo/vector-icons';
+import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
 import { View } from 'react-native';
 
+import { theme } from '@/constants/colors';
 import { cn } from '@/utils/tailwindUtils';
 
 export default function Layout() {
@@ -11,7 +13,16 @@ export default function Layout() {
         headerShown: false,
         tabBarLabelStyle: {
           fontSize: 12,
+          color: theme.colors.muted,
         },
+        tabBarStyle: { position: 'absolute', borderTopWidth: 0 },
+        tabBarBackground: () => (
+          <BlurView
+            tint="dark"
+            intensity={100}
+            style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+          />
+        ),
       }}>
       <Tabs.Screen
         name="updates"
@@ -20,7 +31,7 @@ export default function Layout() {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'flash' : 'flash-outline'}
-              color={focused ? 'rgb(14 125 214)' : 'rgb(223 230 236)'}
+              color={focused ? theme.colors.info : theme.colors.muted}
               size={24}
             />
           ),
@@ -34,7 +45,7 @@ export default function Layout() {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'call' : 'call-outline'}
-              color={focused ? 'rgb(14 125 214)' : 'rgb(223 230 236)'}
+              color={focused ? theme.colors.info : theme.colors.muted}
               size={24}
             />
           ),
@@ -48,7 +59,7 @@ export default function Layout() {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'people' : 'people-outline'}
-              color={focused ? 'rgb(14 125 214)' : 'rgb(223 230 236)'}
+              color={focused ? theme.colors.info : theme.colors.muted}
               size={24}
             />
           ),
@@ -62,7 +73,7 @@ export default function Layout() {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'chatbubbles' : 'chatbubbles-outline'}
-              color={focused ? 'rgb(14 125 214)' : 'rgb(223 230 236)'}
+              color={focused ? theme.colors.info : theme.colors.muted}
               size={24}
             />
           ),
@@ -77,7 +88,7 @@ export default function Layout() {
             <View
               className={cn(
                 'rounded-full w-6 h-6 border-[1.5px]',
-                focused ? 'border-primary' : 'border-secondary',
+                focused ? 'border-info' : 'border-muted',
               )}
             />
           ),
