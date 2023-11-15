@@ -6,11 +6,24 @@ import { View } from 'react-native';
 import { theme } from '@/constants/colors';
 import { cn } from '@/utils/tailwindUtils';
 
-export default function Layout() {
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        headerTitleStyle: {
+          color: theme.colors.muted,
+        },
+        headerTransparent: true,
+        headerBackgroundContainerStyle: {
+          position: 'absolute',
+        },
+        headerBackground: () => (
+          <BlurView
+            tint="dark"
+            intensity={100}
+            style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+          />
+        ),
         tabBarLabelStyle: {
           fontSize: 12,
           color: theme.colors.muted,
