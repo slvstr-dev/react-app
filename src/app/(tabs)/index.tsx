@@ -1,28 +1,32 @@
+import { TouchableOpacity } from '@gorhom/bottom-sheet';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+import { useHeaderHeight } from '@react-navigation/elements';
 import { Text, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import animalsData from '@/assets/data/animals.json';
 
-export default function Page() {
+export default function ChatsPage() {
+  const headerHeight = useHeaderHeight();
   const bottomTabBarHeight = useBottomTabBarHeight();
 
   return (
-    <View className="h-full bg-background-light dark:bg-background-dark">
-      <SafeAreaView edges={['top']}>
-        <FlatList
-          data={animalsData}
-          ListHeaderComponent={() => <Text className="text-dark dark:text-light">Chats</Text>}
-          ItemSeparatorComponent={() => <View className="h-px bg-brand-1" />}
-          renderItem={({ item }) => (
-            <Text key={item.id} className="text-light bg-brand-0 px-2 py-4">
-              {item.name}
-            </Text>
-          )}
-          ListFooterComponent={() => <View className={`mb-[${bottomTabBarHeight}px]`} />}
-        />
-      </SafeAreaView>
+    <View className="h-full bg-background-light dark:bg-dark">
+      <FlatList
+        data={animalsData}
+        ListHeaderComponent={() => (
+          <Text className={`text-dark dark:text-light text-4xl font-bold`}>Chats</Text>
+        )}
+        ItemSeparatorComponent={() => <View className="h-px bg-muted/50" />}
+        renderItem={({ item }) => (
+          <TouchableOpacity key={item.id}>
+            <Text className="text-light px-2 py-4 font-bold">{item.name}</Text>
+          </TouchableOpacity>
+        )}
+        ListFooterComponent={() => <View />}
+        ListHeaderComponentStyle={{ paddingTop: headerHeight }}
+        ListFooterComponentStyle={{ marginBottom: bottomTabBarHeight }}
+      />
     </View>
   );
 }
