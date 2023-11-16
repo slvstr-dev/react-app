@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import { theme } from '@/constants/colors';
 import { cn } from '@/utils/tailwindUtils';
@@ -14,15 +14,8 @@ export default function TabsLayout() {
           color: theme.colors.muted,
         },
         headerTransparent: true,
-        headerBackgroundContainerStyle: {
-          position: 'absolute',
-        },
         headerBackground: () => (
-          <BlurView
-            tint="dark"
-            intensity={100}
-            style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
-          />
+          <BlurView tint="dark" intensity={50} style={StyleSheet.absoluteFill} />
         ),
         tabBarLabelStyle: {
           fontSize: 12,
@@ -30,16 +23,13 @@ export default function TabsLayout() {
         },
         tabBarStyle: { position: 'absolute', borderTopWidth: 0 },
         tabBarBackground: () => (
-          <BlurView
-            tint="dark"
-            intensity={100}
-            style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
-          />
+          <BlurView tint="dark" intensity={100} style={StyleSheet.absoluteFill} />
         ),
       }}>
       <Tabs.Screen
         name="updates"
         options={{
+          headerTitle: 'Updates',
           tabBarLabel: 'Updates',
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -54,6 +44,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="calls"
         options={{
+          headerTitle: 'Calls',
           tabBarLabel: 'Calls',
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -68,6 +59,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="communities"
         options={{
+          headerTitle: 'Communities',
           tabBarLabel: 'Communities',
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -82,6 +74,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
+          headerTitle: 'Chats',
           tabBarLabel: 'Chats',
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -96,6 +89,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="you"
         options={{
+          headerTitle: 'You',
           tabBarLabel: 'You',
           tabBarIcon: ({ focused }) => (
             <View

@@ -13,6 +13,7 @@ export default function YouPage() {
     <View className="h-full bg-background-light dark:bg-dark">
       <FlatList
         data={animalsData}
+        contentContainerClassName="p-2"
         ListHeaderComponent={() => (
           <Text className={`text-dark dark:text-light text-4xl font-bold`}>You</Text>
         )}
