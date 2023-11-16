@@ -1,26 +1,22 @@
-import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
+import { TabBarIcon } from '@/components/TabBarIcon/TabBarIcon';
+import { TabBarLabel } from '@/components/TabBarLabel/TabBarLabel';
 import { theme } from '@/constants/colors';
-import { cn } from '@/utils/tailwindUtils';
 
 export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
         headerTitleStyle: {
-          color: theme.colors.muted,
+          color: theme.colors.body.light,
         },
         headerTransparent: true,
         headerBackground: () => (
           <BlurView tint="dark" intensity={50} style={StyleSheet.absoluteFill} />
         ),
-        tabBarLabelStyle: {
-          fontSize: 12,
-          color: theme.colors.muted,
-        },
         tabBarStyle: { position: 'absolute', borderTopWidth: 0 },
         tabBarBackground: () => (
           <BlurView tint="dark" intensity={100} style={StyleSheet.absoluteFill} />
@@ -30,13 +26,9 @@ export default function TabsLayout() {
         name="updates"
         options={{
           headerTitle: 'Updates',
-          tabBarLabel: 'Updates',
+          tabBarLabel: ({ focused }) => <TabBarLabel isFocused={focused}>Updates</TabBarLabel>,
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'flash' : 'flash-outline'}
-              color={focused ? theme.colors.info : theme.colors.muted}
-              size={24}
-            />
+            <TabBarIcon icon="flash" focusedIcon="flash-outline" isFocused={focused} />
           ),
         }}
       />
@@ -45,13 +37,9 @@ export default function TabsLayout() {
         name="calls"
         options={{
           headerTitle: 'Calls',
-          tabBarLabel: 'Calls',
+          tabBarLabel: ({ focused }) => <TabBarLabel isFocused={focused}>Calls</TabBarLabel>,
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'call' : 'call-outline'}
-              color={focused ? theme.colors.info : theme.colors.muted}
-              size={24}
-            />
+            <TabBarIcon icon="call" focusedIcon="call-outline" isFocused={focused} />
           ),
         }}
       />
@@ -60,13 +48,9 @@ export default function TabsLayout() {
         name="communities"
         options={{
           headerTitle: 'Communities',
-          tabBarLabel: 'Communities',
+          tabBarLabel: ({ focused }) => <TabBarLabel isFocused={focused}>Communities</TabBarLabel>,
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'people' : 'people-outline'}
-              color={focused ? theme.colors.info : theme.colors.muted}
-              size={24}
-            />
+            <TabBarIcon icon="people" focusedIcon="people-outline" isFocused={focused} />
           ),
         }}
       />
@@ -75,13 +59,9 @@ export default function TabsLayout() {
         name="index"
         options={{
           headerTitle: 'Chats',
-          tabBarLabel: 'Chats',
+          tabBarLabel: ({ focused }) => <TabBarLabel isFocused={focused}>Chats</TabBarLabel>,
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'chatbubbles' : 'chatbubbles-outline'}
-              color={focused ? theme.colors.info : theme.colors.muted}
-              size={24}
-            />
+            <TabBarIcon icon="chatbubbles" focusedIcon="chatbubbles-outline" isFocused={focused} />
           ),
         }}
       />
@@ -90,13 +70,12 @@ export default function TabsLayout() {
         name="you"
         options={{
           headerTitle: 'You',
-          tabBarLabel: 'You',
+          tabBarLabel: ({ focused }) => <TabBarLabel isFocused={focused}>You</TabBarLabel>,
           tabBarIcon: ({ focused }) => (
-            <View
-              className={cn(
-                'rounded-full w-6 h-6 border-[1.5px]',
-                focused ? 'border-info' : 'border-muted',
-              )}
+            <TabBarIcon
+              icon="ios-person-circle"
+              focusedIcon="ios-person-circle-outline"
+              isFocused={focused}
             />
           ),
         }}

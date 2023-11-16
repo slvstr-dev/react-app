@@ -28,8 +28,8 @@ module.exports = {
       },
 
       body: {
-        dark: 'rgb(var(--body-dark) / <alpha-value>)',
-        light: 'rgb(var(--body-light) / <alpha-value>)',
+        dark: 'rgb(var(--color-body-dark) / <alpha-value>)',
+        light: 'rgb(var(--color-body-light) / <alpha-value>)',
       },
     },
   },
