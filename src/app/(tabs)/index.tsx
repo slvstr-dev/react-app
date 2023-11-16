@@ -11,7 +11,9 @@ export default function ChatsPage() {
   const bottomTabBarHeight = useBottomTabBarHeight();
 
   return (
-    <View className="h-full bg-background-light dark:bg-dark">
+    <View
+      className="h-full bg-background-light dark:bg-dark"
+      style={{ paddingTop: headerHeight, paddingBottom: bottomTabBarHeight }}>
       <FlatList
         data={animalsData}
         contentContainerClassName="p-2"
@@ -24,9 +26,6 @@ export default function ChatsPage() {
             <Text className="text-light px-2 py-4 font-bold">{item.name}</Text>
           </TouchableOpacity>
         )}
-        ListFooterComponent={() => <View />}
-        ListHeaderComponentStyle={{ paddingTop: headerHeight }}
-        ListFooterComponentStyle={{ marginBottom: bottomTabBarHeight }}
       />
     </View>
   );
