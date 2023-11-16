@@ -7,8 +7,8 @@ export const SearchInput = () => {
   const [query, setQuery] = useState('');
 
   return (
-    <View className="bg-muted/25 rounded-xl p-2 flex-row items-center">
-      <Ionicons name="search" size={16} className="text-muted pr-2" />
+    <View className="flex-row items-center rounded-xl bg-muted/25 p-2">
+      <Ionicons name="search" size={16} className="pr-2 text-muted" />
 
       <TextInput
         className="text-body-light placeholder:text-muted"

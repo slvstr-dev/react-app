@@ -13,7 +13,7 @@ export default function UpdatesPage() {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingTop: headerHeight, paddingBottom: bottomTabBarHeight }}>
       <View className="p-2">
-        <Text className={`text-dark dark:text-light text-4xl font-bold`}>Updates</Text>
+        <Text className={`text-4xl font-bold text-dark dark:text-light`}>Updates</Text>
       </View>
     </ScrollView>
   );

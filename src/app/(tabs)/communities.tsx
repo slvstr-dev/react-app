@@ -13,7 +13,7 @@ export default function CommunitiesPage() {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddingTop: headerHeight, paddingBottom: bottomTabBarHeight }}>
       <View className="p-2">
-        <Text className={`text-dark dark:text-light text-4xl font-bold`}>Communities</Text>
+        <Text className={`text-4xl font-bold text-dark dark:text-light`}>Communities</Text>
       </View>
     </ScrollView>
   );

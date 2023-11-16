@@ -16,12 +16,12 @@ export default function CallsPage() {
         contentContainerClassName="p-2"
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={() => (
-          <Text className={`text-dark dark:text-light text-4xl font-bold`}>Calls</Text>
+          <Text className={`text-4xl font-bold text-dark dark:text-light`}>Calls</Text>
         )}
         ItemSeparatorComponent={() => <View className="h-px bg-muted/50" />}
         renderItem={({ item }) => (
           <TouchableOpacity key={item.id}>
-            <Text className="text-light px-2 py-4 font-bold">{item.name}</Text>
+            <Text className="px-2 py-4 font-bold text-light">{item.name}</Text>
           </TouchableOpacity>
         )}
         ListFooterComponent={() => <View />}

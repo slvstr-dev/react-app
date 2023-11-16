@@ -18,12 +18,12 @@ export default function ChatsPage() {
         data={animalsData}
         contentContainerClassName="p-2"
         ListHeaderComponent={() => (
-          <Text className={`text-dark dark:text-light text-4xl font-bold`}>Chats</Text>
+          <Text className={`text-4xl font-bold text-dark dark:text-light`}>Chats</Text>
         )}
         ItemSeparatorComponent={() => <View className="h-px bg-muted/50" />}
         renderItem={({ item }) => (
           <TouchableOpacity key={item.id}>
-            <Text className="text-light px-2 py-4 font-bold">{item.name}</Text>
+            <Text className="px-2 py-4 font-bold text-light">{item.name}</Text>
           </TouchableOpacity>
         )}
       />
