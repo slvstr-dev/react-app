@@ -7,6 +7,7 @@ export const colors = {
   background: {
     dark: '17 27 33', //#111B21
     light: '235 229 222', //#EBE5DE
+    brand: '235 237 240', //#EBEBF0
   },
 
   brand: {
@@ -35,6 +36,7 @@ export const theme = {
     background: {
       dark: `rgb(${colors.background.dark})`,
       light: `rgb(${colors.background.light})`,
+      brand: `rgb(${colors.background.brand})`,
     },
 
     brand: {

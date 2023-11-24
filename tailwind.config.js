@@ -15,6 +15,7 @@ module.exports = {
       background: {
         dark: 'rgb(var(--color-background-dark) / <alpha-value>)',
         light: 'rgb(var(--color-background-light) / <alpha-value>)',
+        brand: 'rgb(var(--color-background-brand) / <alpha-value>)',
       },
 
       brand: {
@@ -44,6 +45,7 @@ module.exports = {
 
           '--color-background-dark': colors.background.dark,
           '--color-background-light': colors.background.light,
+          '--color-background-brand': colors.background.brand,
 
           '--color-brand-0': colors.brand[0],
           '--color-brand-1': colors.brand[1],
