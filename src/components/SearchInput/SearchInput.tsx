@@ -1,7 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { View } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { View, TextInput } from 'react-native';
 
 export const SearchInput = () => {
   const [query, setQuery] = useState('');
