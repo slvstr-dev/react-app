@@ -38,4 +38,13 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       projectId: 'c52b4a5b-ff9c-4178-ada6-c852f87a1fd6',
     },
   },
+  updates: {
+    url: 'https://u.expo.dev/c52b4a5b-ff9c-4178-ada6-c852f87a1fd6',
+    requestHeaders: {
+      'expo-channel-name': 'main',
+    },
+  },
+  runtimeVersion: {
+    policy: 'appVersion',
+  },
 });

@@ -37,4 +37,5 @@ yarn-error.*
 .eslintcache
 
 # expo-cli
+ios
 expo-env.d.ts
