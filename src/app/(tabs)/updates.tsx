@@ -8,13 +8,16 @@ export default function UpdatesPage() {
   const bottomTabBarHeight = useBottomTabBarHeight();
 
   return (
-    <ScrollView
-      className={`h-full bg-background-light dark:bg-dark`}
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingTop: headerHeight, paddingBottom: bottomTabBarHeight }}>
-      <View className="p-2">
-        <Text className={`text-4xl font-bold text-dark dark:text-light`}>Updates</Text>
-      </View>
-    </ScrollView>
+    <View
+      className="h-full bg-background-brand dark:bg-dark"
+      style={{ paddingTop: headerHeight, paddingBottom: bottomTabBarHeight }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ paddingHorizontal: 10, paddingVertical: 20 }}>
+        <View className="gap-10">
+          <Text className={`text-4xl font-bold text-dark dark:text-light`}>Updates</Text>
+        </View>
+      </ScrollView>
+    </View>
   );
 }

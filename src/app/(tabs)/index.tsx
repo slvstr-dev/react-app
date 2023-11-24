@@ -1,12 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { useHeaderHeight } from '@react-navigation/elements';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import { ChatItem } from '@/components/ChatItem/ChatItem';
-import { ScreenTitle } from '@/components/ScreenTitle/ScreenTitle';
+import { Heading } from '@/components/ScreenTitle/ScreenTitle';
 import { User } from '@/types/interfaces';
 import { fetchJSONPlaceholder } from '@/utils/fetchUtils';
 
@@ -39,15 +39,25 @@ export default function ChatsPage() {
 
   return (
     <View
-      className="h-full bg-background-light dark:bg-dark"
+      className="bg-white h-full dark:bg-dark"
       style={{ paddingTop: headerHeight, paddingBottom: bottomTabBarHeight }}>
-      <FlatList
-        data={users}
-        contentContainerClassName="px-2 py-4"
-        ListHeaderComponent={() => <ScreenTitle className="mb-4">Chats</ScreenTitle>}
-        ItemSeparatorComponent={() => <View className="my-4 h-px bg-muted/50" />}
-        renderItem={({ item }) => <ChatItem user={item} />}
-      />
+      <ScrollView style={{ paddingHorizontal: 10, paddingVertical: 20 }}>
+        <Heading className="mb-4">Chats</Heading>
+
+        <View className="mb-10 gap-3 rounded-xl bg-light px-2 py-4">
+          {users.map((user, idx) => {
+            const hasSeperator = idx !== users.length - 1;
+
+            return (
+              <Fragment key={user.id}>
+                <ChatItem user={user} />
+
+                {hasSeperator && <View className="h-px bg-muted/50" />}
+              </Fragment>
+            );
+          })}
+        </View>
+      </ScrollView>
     </View>
   );
 }
