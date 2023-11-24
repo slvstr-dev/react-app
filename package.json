@@ -7,6 +7,8 @@
   "scripts": {
     "start": "expo start --go",
     "ios": "expo run:ios",
+    "android": "expo run:android",
+    "prebuild": "npx expo prebuild --platform ios",
     "build:preview": "eas build -p ios --profile preview",
     "format": "prettier . --check",
     "format:fix": "prettier . --write",

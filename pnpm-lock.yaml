@@ -63,7 +63,7 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0
   react-native:
-    specifier: 0.72.6
+    specifier: ~0.72.6
     version: 0.72.6(@babel/core@7.23.3)(@babel/preset-env@7.23.3)(react@18.2.0)
   react-native-gesture-handler:
     specifier: ~2.12.1
@@ -72,7 +72,7 @@ dependencies:
     specifier: ~3.3.0
     version: 3.3.0(@babel/core@7.23.3)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.23.3)(@babel/plugin-transform-shorthand-properties@7.23.3)(@babel/plugin-transform-template-literals@7.23.3)(react-native@0.72.6)(react@18.2.0)
   react-native-safe-area-context:
-    specifier: 4.6.3
+    specifier: ~4.6.3
     version: 4.6.3(react-native@0.72.6)(react@18.2.0)
   react-native-screens:
     specifier: ~3.22.1
